@@ -7,20 +7,18 @@ import Button from '@mui/material/Button'
 import Link from '@mui/material/Link'
 import { Link as RouterLink } from 'react-router-dom'
 
-export default function ExamineeRegister() {
+export default function Login() {
   return (
     <Container maxWidth="sm" className="pt-12">
       <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-        <Typography variant="h4">Register as Examinee</Typography>
-        <TextField label="Full name" type="text" fullWidth />
+        <Typography variant="h4">Login</Typography>
         <TextField label="Email" type="email" fullWidth />
         <TextField label="Password" type="password" fullWidth />
-        <TextField label="Confirm password" type="password" fullWidth />
-        <Button variant="contained" color="primary">Create account</Button>
+        <Button variant="contained" color="primary">Sign in</Button>
 
         <Typography variant="body2" color="text.secondary">
-          Already have an account?{' '}
-          <Link component={RouterLink} to="/login">Sign in</Link>
+          Don't have an account?{' '}
+          <Link component={RouterLink} to="/register">Create one</Link>
         </Typography>
       </Box>
     </Container>

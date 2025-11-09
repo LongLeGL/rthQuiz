@@ -27,12 +27,20 @@ a:hover {
   color: #535bf2;
 }
 
+html, body, #root {
+  height: 100%;
+}
+
 body {
   margin: 0;
+  /* Use a column flex layout so header + main can stretch to full height */
   display: flex;
-  place-items: center;
+  flex-direction: column;
+  align-items: stretch;
   min-width: 320px;
   min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden; /* prevent horizontal scroll */
 }
 
 h1 {
