@@ -1,6 +1,9 @@
 import React from 'react'
 import './App.css'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import { ThemeProvider } from '@mui/material/styles'
+import CssBaseline from '@mui/material/CssBaseline'
+import theme from './theme'
 import Home from './pages/Home'
 import ExaminerDashboard from './pages/ExaminerDashboard'
 import CreateQuiz from './pages/CreateQuiz'
@@ -13,8 +16,10 @@ import NotFound from './pages/NotFound'
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <header style={{padding:12, borderBottom:'1px solid #ddd'}}>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <BrowserRouter>
+      <header style={{position: 'sticky', top: 0, zIndex: 1000, padding: 12, borderBottom: '1px solid #e5e7eb', background: 'var(--bg, #ffffff)'}} className="backdrop-blur">
         <nav style={{display:'flex', gap:12}}>
           <Link to="/">Home</Link>
           <Link to="/examiner">Examiner</Link>
@@ -38,6 +43,7 @@ export default function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
-    </BrowserRouter>
+      </BrowserRouter>
+    </ThemeProvider>
   )
 }
